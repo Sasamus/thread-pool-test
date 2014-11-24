@@ -5,5 +5,9 @@ package ae.threadpooltest.strategies;
  * @since 2014-11-24
  */
 public class ExecutionStrategy {
+	
+	void RunIt(){
+		
+	}
 
 }
