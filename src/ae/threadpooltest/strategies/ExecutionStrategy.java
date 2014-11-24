@@ -1,13 +1,18 @@
 package ae.threadpooltest.strategies;
 
+import ae.threadpooltest.test.MyTimer;
+
 /**
  * @author Albin Engström
  * @since 2014-11-24
  */
-public class ExecutionStrategy {
+public abstract class ExecutionStrategy {
 	
-	void RunIt(){
-		
-	}
+	private MyTimer myTimer;
+	
+	/**
+	 * Runs the strategy
+	 */
+	abstract void RunIt();
 
 }
