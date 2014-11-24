@@ -1,10 +1,14 @@
+/*
+ *  Created: 2014-11-24
+ * Modified: 2014-11-24
+ */
+
 package ae.threadpooltest.strategies;
 
 import ae.threadpooltest.test.MyTimer;
 
 /**
  * @author Albin Engström
- * @since 2014-11-24
  */
 public abstract class ExecutionStrategy {
 	
