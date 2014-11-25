@@ -1,5 +1,7 @@
 package ae.threadpooltest.test;
 
+import ae.threadpooltest.strategies.ExecutionStrategy;
+import ae.threadpooltest.strategies.OneThreadPerJobStrategy;
 import ae.threadpooltest.strategies.SequentialStrategy;
 
 
@@ -14,9 +16,17 @@ public class ThreadPoolTest {
 	 */
 	public static void main(String[] args) {
 		
-		SequentialStrategy seqstra = new SequentialStrategy();
+		System.out.println("-------------------------------------------------------");
 		
-		seqstra.runIt();
+		ExecutionStrategy strategy = new SequentialStrategy();
+		
+		strategy.runIt();
+		
+		System.out.println("-------------------------------------------------------");
+		
+		strategy = new OneThreadPerJobStrategy();
+		
+		strategy.runIt();
 
 	}
 

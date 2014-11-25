@@ -22,6 +22,6 @@ public abstract class ExecutionStrategy {
 	/**
 	 * Runs the strategy
 	 */
-	abstract void runIt();
+	public abstract void runIt();
 
 }
