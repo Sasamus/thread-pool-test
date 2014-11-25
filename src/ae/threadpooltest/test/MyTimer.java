@@ -35,10 +35,11 @@ public class MyTimer {
 	}
 	
 	/**
-	 * @return the difference between stopTime and startTime
+	 * @return the difference between stopTime and startTime in milliseconds
 	 */
-	long diff(){
-	  	return stopTime - startTime;
+	public long diff(){
+		final int MILLION = 1000000;
+	  	return (stopTime - startTime)/MILLION;
 	}
 
 }

@@ -5,6 +5,8 @@
 
 package ae.threadpooltest.strategies;
 
+import ae.threadpooltest.random.RandMaker;
+
 /**
  * @author Albin Engström
  */
@@ -14,19 +16,28 @@ public class SequentialStrategy extends ExecutionStrategy {
 	 * @see ae.threadpooltest.strategies.ExecutionStrategy#RunIt()
 	 */
 	@Override
-	void RunIt() {
+	public void runIt() {
 		
 		System.out.println("SequentialStrategy: 1 thread " + TOT_VALUES + " values...");
-		float sum=0.0;
-		iTimer.start();
-		for(int i=0;i<NJOBS;++i) {
-			sum += ram(VALUES_PER_THREAD);
+		
+		//Variable to hold the sum
+		double sum = 0.0;
+		
+		//Start myTimer
+		myTimer.start();
+		
+		//Run NJOBS jobs
+		for(int i=0; i < NJOBS; ++i) {
+			
+			//Add the result of RandMakers run() to sum
+			sum += RandMaker.run(VALUES_PER_THREAD);
 		}
-		iTimer.stop();
-		cout << "Mean = " <<  sum/NJOBS << '\n';
-		cout << "Duration: " << iTimer.diff() << " ms." << endl;
+		
+		//Stop myTimer
+		myTimer.stop();
+		
+		System.out.println("Mean = " + sum/NJOBS);
+		
+		System.out.println("Duration: " + myTimer.diff() + " ms.");
 	}
-
-	}
-
 }

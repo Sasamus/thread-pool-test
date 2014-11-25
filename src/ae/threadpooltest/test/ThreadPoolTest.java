@@ -1,5 +1,7 @@
 package ae.threadpooltest.test;
 
+import ae.threadpooltest.strategies.SequentialStrategy;
+
 
 /**
  * @author Albin Engström
@@ -11,7 +13,9 @@ public class ThreadPoolTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		SequentialStrategy seqstra = new SequentialStrategy();
 		
+		seqstra.runIt();
 
 	}
 

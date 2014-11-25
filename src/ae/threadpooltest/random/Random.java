@@ -7,8 +7,7 @@ package ae.threadpooltest.random;
 */
 
 
-import java.util.*;
-import java.lang.Math.*;
+import java.util.Date;
 
 
 public class Random {

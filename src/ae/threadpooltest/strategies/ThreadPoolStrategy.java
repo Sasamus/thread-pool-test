@@ -14,7 +14,7 @@ public class ThreadPoolStrategy extends ExecutionStrategy {
 	 * @see ae.threadpooltest.strategies.ExecutionStrategy#RunIt()
 	 */
 	@Override
-	void RunIt() {
+	void runIt() {
 		// TODO Auto-generated method stub
 
 	}

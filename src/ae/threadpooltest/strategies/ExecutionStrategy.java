@@ -20,13 +20,13 @@ public abstract class ExecutionStrategy {
 	final long TOT_VALUES = NJOBS * VALUES_PER_THREAD; 
 	
 	/**
-	 * A variable to hola a MyTimer object
+	 * A variable to hold a MyTimer object
 	 */
-	private MyTimer myTimer = new MyTimer();
+	protected MyTimer myTimer = new MyTimer();
 	
 	/**
 	 * Runs the strategy
 	 */
-	abstract void RunIt();
+	abstract void runIt();
 
 }
