@@ -14,19 +14,38 @@ import ae.threadpooltest.random.RandMaker;
  * @author Albin Engström
  */
 public class SequentialStrategy extends ExecutionStrategy {
+	
+	/**
+	 * A variable to hold a RandMaker
+	 */
+	RandMaker randMaker;
+	
+	
+	/**
+	 * A variable to hold the value of constant TOT_VALUES from Constants
+	 */
+	long tot_values;
+	
+	
+	/**
+	 * A variable to hold the value of constant NJOBS from Constants
+	 */
+	int njobs;
+	
+	public SequentialStrategy() {
+		//Create a new RandMaker object
+		randMaker = new RandMaker();
+		
+		//Gets required constants
+		tot_values = ae.threadpooltest.constants.Constants.TOT_VALUES;
+		njobs = ae.threadpooltest.constants.Constants.NJOBS;
+	}
 
 	/* (non-Javadoc)
 	 * @see ae.threadpooltest.strategies.ExecutionStrategy#RunIt()
 	 */
 	@Override
 	public void runIt() {
-		
-		//Create a new RandMaker object
-		RandMaker randMaker = new RandMaker();
-		
-		//Gets required constants
-		long tot_values = ae.threadpooltest.constants.Constants.TOT_VALUES;
-		int njobs = ae.threadpooltest.constants.Constants.NJOBS;
 		
 		System.out.println("SequentialStrategy: 1 thread " + tot_values + " values...");
 		
