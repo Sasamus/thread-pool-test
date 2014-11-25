@@ -14,11 +14,6 @@ import ae.threadpooltest.test.MyTimer;
  */
 public abstract class ExecutionStrategy {
 	
-	final int ONE_MILLION = 1000000;
-	final int VALUES_PER_THREAD = ONE_MILLION;
-	final int NJOBS = 300;
-	final long TOT_VALUES = NJOBS * VALUES_PER_THREAD; 
-	
 	/**
 	 * A variable to hold a MyTimer object
 	 */

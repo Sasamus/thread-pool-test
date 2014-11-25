@@ -8,11 +8,12 @@ import ae.threadpooltest.strategies.SequentialStrategy;
  * @since 2014-11-24
  */
 public class ThreadPoolTest {
-
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
 		SequentialStrategy seqstra = new SequentialStrategy();
 		
 		seqstra.runIt();
