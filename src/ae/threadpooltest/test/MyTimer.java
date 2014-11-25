@@ -10,17 +10,33 @@ package ae.threadpooltest.test;
  */
 public class MyTimer {
 	
+	/**
+	 * A variable to hold the start time
+	 */
 	private long startTime;
+	
+	/**
+	 * A variable to hold the stop time
+	 */
 	private long stopTime;
 	
+	/**
+	 * Sets startTime
+	 */
 	public void start(){
 		startTime = System.nanoTime();
 	}
 	
+	/**
+	 * Sets stopTime
+	 */
 	public void stop(){
 		stopTime = System.nanoTime();
 	}
 	
+	/**
+	 * @return the difference between stopTime and startTime
+	 */
 	long diff(){
 	  	return stopTime - startTime;
 	}
