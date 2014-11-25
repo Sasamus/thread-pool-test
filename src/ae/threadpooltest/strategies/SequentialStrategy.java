@@ -21,8 +21,14 @@ public class SequentialStrategy extends ExecutionStrategy {
 	@Override
 	public void runIt() {
 		
-		System.out.println("SequentialStrategy: 1 thread " + 
-				ae.threadpooltest.constants.Constants.TOT_VALUES + " values...");
+		//Create a new RandMaker object
+		RandMaker randMaker = new RandMaker();
+		
+		//Gets required constants
+		long tot_values = ae.threadpooltest.constants.Constants.TOT_VALUES;
+		int njobs = ae.threadpooltest.constants.Constants.NJOBS;
+		
+		System.out.println("SequentialStrategy: 1 thread " + tot_values + " values...");
 		
 		//Variable to hold the sum
 		double sum = 0.0;
@@ -31,16 +37,16 @@ public class SequentialStrategy extends ExecutionStrategy {
 		myTimer.start();
 		
 		//Run NJOBS jobs
-		for(int i=0; i < ae.threadpooltest.constants.Constants.NJOBS; ++i) {
+		for(int i=0; i < njobs; ++i) {
 			
-			//Add the result of RandMakers run() to sum
-			sum += new RandMaker().call();
+			//Add the result of randMakers call() to sum
+			sum += randMaker.call();
 		}
 		
 		//Stop myTimer
 		myTimer.stop();
 		
-		System.out.println("Mean = " + sum/NJOBS);
+		System.out.println("Mean = " + sum/njobs);
 		
 		System.out.println("Duration: " + myTimer.diff() + " ms.");
 	}
