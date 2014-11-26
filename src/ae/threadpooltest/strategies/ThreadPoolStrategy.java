@@ -41,7 +41,7 @@ public class ThreadPoolStrategy extends ExecutionStrategy {
 	 */
 	public ThreadPoolStrategy(int nrThreads) {
 		
-		//Set nrCpus to number of available cpus
+		//Set nrCpus to number of available CPUs
 		nrCpus = Runtime.getRuntime().availableProcessors();
 		
 		//If nrThreads is 0, set create thread pool with nrCpus threads, else nThreads
@@ -63,7 +63,7 @@ public class ThreadPoolStrategy extends ExecutionStrategy {
 	@Override
 	public void runIt() {
 		
-		//Prints depending on
+		//Prints depending on poolSize
 		if(poolSize == nrCpus) {	
 			System.out.println("ThreadPoolStrategy " + nrCpus + " threads"
 			+ " == " + "available processor cores,");
@@ -72,10 +72,13 @@ public class ThreadPoolStrategy extends ExecutionStrategy {
 			System.out.println("ThreadPoolStrategy " + poolSize + " threads " 
 			+ TOT_VALUES + " values in total...");
 
+		//Holds the sum
 		double sum = 0.0;
 		
+		//Holds the results
 		Vector<Future<Double> > results = new Vector<Future<Double>>();
 		
+		//Start myTimer
 		myTimer.start();
 		
 		//Create a thread for each job
@@ -95,8 +98,10 @@ public class ThreadPoolStrategy extends ExecutionStrategy {
 			}
 		}
 		
+		//Stop myTimer
 		myTimer.stop();
 
+		//Prints results
 		System.out.println("Mean = " +  sum/NJOBS);
 		System.out.println("Duration: " + myTimer.diff() + " ms.");
 
