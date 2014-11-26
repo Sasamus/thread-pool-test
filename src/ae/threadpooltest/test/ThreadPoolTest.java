@@ -1,8 +1,14 @@
+/*
+ *  Created: 2014-11-24
+ * Modified: 2014-11-26
+ */
+
 package ae.threadpooltest.test;
 
 import ae.threadpooltest.strategies.ExecutionStrategy;
 import ae.threadpooltest.strategies.OneThreadPerJobStrategy;
 import ae.threadpooltest.strategies.SequentialStrategy;
+import ae.threadpooltest.strategies.ThreadPoolStrategy;
 
 
 /**
@@ -27,6 +33,20 @@ public class ThreadPoolTest {
 		strategy = new OneThreadPerJobStrategy();
 		
 		strategy.runIt();
+
+		System.out.println("-------------------------------------------------------");
+		
+		strategy = new ThreadPoolStrategy(0);
+		
+		strategy.runIt();
+		
+		System.out.println("-------------------------------------------------------");
+		
+		strategy = new ThreadPoolStrategy(Runtime.getRuntime().availableProcessors()/2);
+		
+		strategy.runIt();
+		
+		System.out.println("-------------------------------------------------------");
 
 	}
 
