@@ -32,7 +32,7 @@ public class ThreadPoolStrategy extends ExecutionStrategy {
 	private int poolSize;
 	
 	/**
-	 * Holds the number of available Cpus
+	 * Holds the number of available CPUs
 	 */
 	private int nrCpus;
 	
