@@ -33,6 +33,18 @@ public class ThreadPoolTest {
 		strategy = new OneThreadPerJobStrategy();
 		
 		strategy.runIt();
+		
+		System.out.println("-------------------------------------------------------");
+		
+		strategy = new ThreadPoolStrategy(200);
+		
+		strategy.runIt();
+		
+		System.out.println("-------------------------------------------------------");
+		
+		strategy = new ThreadPoolStrategy(300);
+		
+		strategy.runIt();
 
 		System.out.println("-------------------------------------------------------");
 		

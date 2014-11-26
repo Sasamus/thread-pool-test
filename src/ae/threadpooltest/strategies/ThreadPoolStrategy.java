@@ -21,16 +21,30 @@ import ae.threadpooltest.random.RandMaker;
  */
 public class ThreadPoolStrategy extends ExecutionStrategy {
 	
+	/**
+	 * Holds the thread pool
+	 */
 	private ExecutorService pool = null;
 	
+	/**
+	 * Holds the pool size
+	 */
 	private int poolSize;
 	
+	/**
+	 * Holds the number of available Cpus
+	 */
 	private int nrCpus;
 	
+	/**
+	 * @param nrThreads number of threads to use
+	 */
 	public ThreadPoolStrategy(int nrThreads) {
 		
-		int nrCpus = Runtime.getRuntime().availableProcessors();
+		//Set nrCpus to number of available cpus
+		nrCpus = Runtime.getRuntime().availableProcessors();
 		
+		//If nrThreads is 0, set create thread pool with nrCpus threads, else nThreads
 		if(nrThreads == 0){
 			pool = Executors.newFixedThreadPool(nrCpus);
 			poolSize = nrCpus;
@@ -49,8 +63,9 @@ public class ThreadPoolStrategy extends ExecutionStrategy {
 	@Override
 	public void runIt() {
 		
-		if(poolSize == 0) {	
-			System.out.println("ThreadPoolStrategy " + nrCpus + " threads "
+		//Prints depending on
+		if(poolSize == nrCpus) {	
+			System.out.println("ThreadPoolStrategy " + nrCpus + " threads"
 			+ " == " + "available processor cores,");
 		}
 		else
