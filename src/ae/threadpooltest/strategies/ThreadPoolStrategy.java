@@ -81,7 +81,7 @@ public class ThreadPoolStrategy extends ExecutionStrategy {
 		//Start myTimer
 		myTimer.start();
 		
-		//Create a thread for each job
+		//Add each job to pool
 		for(int i=0; i < NJOBS; ++i) {
 			
 			//Create and add a future to results
